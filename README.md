@@ -112,6 +112,7 @@ uv sync
 ```
 
 ## 🛠️ TO-DO
+- [ ] Add support for more LLM providers
 - [ ] Write better prompts 
 - [ ] Add an `executor` that executes the query on a copy database, or generate mock data from the schema and execute the query.
 
