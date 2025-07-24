@@ -1,0 +1,104 @@
+{
+    "tables": [
+        {
+            "table_name": "customers",
+            "description": "Stores information about the e-commerce customers.",
+            "columns": {
+                "customer_id": "Unique identifier for each customer (Primary Key).",
+                "first_name": "First name of the customer.",
+                "last_name": "Last name of the customer.",
+                "email": "Unique email address for the customer.",
+                "password_hash": "Hashed password for account security.",
+                "phone_number": "Contact phone number of the customer.",
+                "created_at": "Timestamp when the customer account was created."
+            }
+        },
+        {
+            "table_name": "products",
+            "description": "Contains all product information for the store.",
+            "columns": {
+                "product_id": "Unique identifier for each product (Primary Key).",
+                "name": "Name of the product.",
+                "description": "Detailed description of the product.",
+                "price": "Price of the product in a decimal format.",
+                "sku": "Stock Keeping Unit, unique code for the product.",
+                "stock_quantity": "Number of items currently in stock.",
+                "category_id": "Foreign key linking to the categories table.",
+                "created_at": "Timestamp when the product was added.",
+                "updated_at": "Timestamp when the product was last updated."
+            }
+        },
+        {
+            "table_name": "categories",
+            "description": "Stores product categories for organization.",
+            "columns": {
+                "category_id": "Unique identifier for each category (Primary Key).",
+                "name": "Name of the category (e.g., Electronics, Books).",
+                "description": "A brief description of the category.",
+                "parent_category_id": "Self-referencing key for sub-categories (can be null)."
+            }
+        },
+        {
+            "table_name": "orders",
+            "description": "Tracks customer orders.",
+            "columns": {
+                "order_id": "Unique identifier for each order (Primary Key).",
+                "customer_id": "Foreign key linking to the customers table.",
+                "order_date": "Timestamp when the order was placed.",
+                "status": "Current status of the order (e.g., pending, shipped, delivered, cancelled).",
+                "total_amount": "Total cost of the order.",
+                "shipping_address_id": "Foreign key linking to the shipping_addresses table."
+            }
+        },
+        {
+            "table_name": "order_items",
+            "description": "Junction table to link products to orders.",
+            "columns": {
+                "order_item_id": "Unique identifier for each line item in an order (Primary Key).",
+                "order_id": "Foreign key linking to the orders table.",
+                "product_id": "Foreign key linking to the products table.",
+                "quantity": "Number of units of the product ordered.",
+                "price_per_unit": "The price of a single unit at the time of purchase."
+            }
+        },
+        {
+            "table_name": "reviews",
+            "description": "Stores customer reviews for products.",
+            "columns": {
+                "review_id": "Unique identifier for each review (Primary Key).",
+                "product_id": "Foreign key linking to the product being reviewed.",
+                "customer_id": "Foreign key linking to the customer who wrote the review.",
+                "rating": "Star rating from 1 to 5.",
+                "comment": "The text content of the review.",
+                "review_date": "Timestamp when the review was submitted."
+            }
+        },
+        {
+            "table_name": "shipping_addresses",
+            "description": "Stores shipping addresses for customers.",
+            "columns": {
+                "address_id": "Unique identifier for each address (Primary Key).",
+                "customer_id": "Foreign key linking to the customers table.",
+                "address_line1": "The main street address line.",
+                "address_line2": "Apartment, suite, or unit number (optional).",
+                "city": "City name.",
+                "state_province_region": "State, province, or region.",
+                "postal_code": "The postal or ZIP code.",
+                "country": "Country name.",
+                "is_default": "Boolean indicating if this is the customer's default address."
+            }
+        },
+        {
+            "table_name": "payments",
+            "description": "Logs payment transactions for orders.",
+            "columns": {
+                "payment_id": "Unique identifier for each payment (Primary Key).",
+                "order_id": "Foreign key linking to the order this payment is for.",
+                "payment_date": "Timestamp when the payment was processed.",
+                "payment_method": "Method of payment (e.g., credit_card, paypal, bank_transfer).",
+                "amount": "The amount paid.",
+                "status": "Status of the payment (e.g., completed, failed, refunded)."
+            }
+        }
+    ]
+}

@@ -1,0 +1,17 @@
+[project]
+name = "multi-agent-text2sql-system"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "dotenv>=0.9.9",
+    "ipykernel>=6.30.0",
+    "langchain-community>=0.3.27",
+    "langchain-groq>=0.3.6",
+    "langgraph>=0.5.3",
+    "openai>=1.97.0",
+    "pip>=25.1.1",
+    "sqlglot>=27.0.0",
+]
+
