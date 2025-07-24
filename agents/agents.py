@@ -3,14 +3,14 @@ from langchain_groq.chat_models import ChatGroq
 
 from langchain_core.messages import AnyMessage, AIMessage, HumanMessage
 
-from configuration import Configuration
-from prompts import relevance_prompt, generator_prompt, evaluator_prompt, finalize_prompt, get_current_date
-from schemas import RelevanceCheckerSchema, GeneratorSchema, EvaluatorSchema, EvalEnum, FinalVerdictEnum
-from states import FullState
+from agents.configuration import Configuration
+from agents.prompts import relevance_prompt, generator_prompt, evaluator_prompt, finalize_prompt, get_current_date
+from agents.schemas import RelevanceCheckerSchema, GeneratorSchema, EvaluatorSchema, EvalEnum, FinalVerdictEnum
+from agents.states import FullState
 
 import os
 from dotenv import load_dotenv
-from sqlvalidator import SQLValidator
+from utils.sqlvalidator import SQLValidator
 
 load_dotenv()
 

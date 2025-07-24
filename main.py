@@ -1,7 +1,7 @@
 import argparse
 from langchain_core.messages import HumanMessage
-from graph import graph
-from configuration import Configuration
+from agents.graph import graph
+from agents.configuration import Configuration
 import json
 
 def main() -> None:

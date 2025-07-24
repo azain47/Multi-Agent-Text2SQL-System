@@ -1,6 +1,6 @@
 from typing import TypedDict, Annotated, List, Optional
 from langgraph.graph import add_messages
-from schemas import EvalEnum, FinalVerdictEnum
+from agents.schemas import EvalEnum, FinalVerdictEnum
 import operator
 
 

@@ -1,7 +1,7 @@
 from langgraph.graph import StateGraph, START, END
-from configuration import Configuration
-from states import FullState
-from agents import (relevance_checker, 
+from agents.configuration import Configuration
+from agents.states import FullState
+from agents.agents import (relevance_checker, 
                     sql_generator, 
                     sql_validator, 
                     query_evaluator, 
