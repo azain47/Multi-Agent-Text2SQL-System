@@ -5,7 +5,7 @@ build/
 dist/
 wheels/
 *.egg-info
-
+.gitignore
 .vscode
 
 # Virtual environments
